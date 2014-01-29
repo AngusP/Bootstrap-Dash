@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>COMPSOC Backend</title>
+    <title>Stratos Dash</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/override.css">
   </head>
@@ -11,16 +11,16 @@
       <div class="header">
 	<div class="container row">
 	  <div class="col-sm-6 col-xs-12">
-	    <a href="#"><img class="header-image" src="img/compsoc.png" alt="CompSoc Admin"></a>
+	    <a href="#"><img class="header-image" src="img/stratos.png" alt="CompSoc Admin"></a>
 	  </div>
 	  
 	  <div class="col-sm-6 col-xs-12">
 	    <div class="user-panel">
 	      <a href="#">
-		<img class="user-avatar" src="http://www.gravatar.com/avatar/8655d2dc3ae533044241f069c0670dcd.jpg?s=80&d=retro">
+		<img class="user-avatar" src="http://www.gravatar.com/avatar/8c54ddeaeca4f852c1d522c83780ced1.jpg?s=80&d=retro">
 	      </a>
 	      <div class="user-info">
-		<a href="#"><h3>JR Hacker</h3></a>
+		<a href="#"><h3>AngusP</h3></a>
 		<button class="btn btn-danger">Log Out</button>
 	      </div>
 	    </div>
@@ -61,12 +61,22 @@
 	      </div>
 	      <div class="form-group">
 		<a href="#" class="btn btn-default btn-full" type="button">
+		  <span class="glyphicon glyphicon-bullhorn"> Notices</span>
+		</a>
+	      </div>
+	      <div class="form-group">
+		<a href="#" class="btn btn-default btn-full" type="button">
 		  <span class="glyphicon glyphicon-user"> Users</span>
 		</a>
 	      </div>
 	      <div class="form-group">
 		<a href="#" class="btn btn-default btn-full" type="button">
-		  <span class="glyphicon glyphicon-wrench"> Settings</span>
+		  <span class="glyphicon glyphicon-pushpin"> Widgets</span>
+		</a>
+	      </div>
+	      <div class="form-group">
+		<a href="#" class="btn btn-default btn-full" type="button">
+		  <span class="glyphicon glyphicon-cog"> Settings</span>
 		</a>
 	      </div>
 	    </div>
@@ -77,31 +87,66 @@
 
 	    <div class="col-md-12">
 	      <div class="block block-green">
-		Welcome to your dashboard
+		<div class="btn-toolbar">
+		  <div class="btn-group">
+		    <span class="btn btn-success">Welcome to your dashboard!</span>
+		    <button type="button" class="btn btn-success">Edit Layout</button>
+		    <button type="button" class="btn btn-success">Add...</button>
+		  </div>
+		</div>
 	      </div>
 	    </div>
 	    
+	    <!-- Column 1 -->
 	    <div class="col-md-4">
 	      <div class="block block-red block-4-sq">
 		<h3>Analytics</h3>
 	      </div>
 	    </div>
 
+	    <!-- Column 2 -->
 	    <div class="col-md-4">
 	      <div class="block block-black block-4-sq">
 		<h3>Rescent Delta</h3>
+		<p>
+		  <span class="text-success">Additions</span>, 
+		  <span class="text-warning">Modifications</span>& 
+		  <span class="text-danger">Deletions</span>:
+		</p>
+		<div class="progress">
+		  <div class="progress-bar progress-bar-success" style="width: 65%">
+		    <span class="sr-only">65% Additions</span>
+		  </div>
+		  <div class="progress-bar progress-bar-warning" style="width: 28%">
+		    <span class="sr-only">28% Edits</span>
+		  </div>
+		  <div class="progress-bar progress-bar-danger" style="width: 7%">
+		    <span class="sr-only">7% Deletions</span>
+		  </div>
+		</div>
 	      </div>
 	    </div>
 
+	    <!-- Column 3 -->
 	    <div class="col-md-4">
 	      <div class="block block-purple">
 		Wow. This is seriously purple :D
 	      </div>
-	    </div>
 
-	    <div class="col-md-4">
 	      <div class="block block-blue">
-		YAY! There's a blue block, as well! (this isn't metro though...
+		<h4>Top swearers on IRC:</h4>
+		<table class="table">
+		  <thead>
+		    <tr><td>Nick</td><td>Score</td></tr>
+		  </thead>
+		  <tbody>
+		    <tr><td>angusp                  </td><td>590</td></tr>
+		    <tr><td>StrawHatter             </td><td>547</td></tr>
+		    <tr><td>jammy                   </td><td>411</td></tr>
+		    <tr><td>lambdabot               </td><td>284</td></tr>
+		    <tr><td>kitb                    </td><td>240</td></tr>
+		  </tbody>
+		</table>
 	      </div>
 	    </div>
 
