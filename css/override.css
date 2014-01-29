@@ -1,0 +1,338 @@
+/**
+ * C O M P S O C    A D M I N    C S S
+ * 
+ */
+
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic|Andada|Fjalla+One);
+/* Import three fonts: Fjalla, an impact-like heading font; Andada, a nice serif and Ubuntu mono. */
+
+/* Custom WebKit scrollbars because why not... */
+::-webkit-scrollbar {
+    width: 8px;
+    max-width: 8px;
+    height: 8px;
+    max-width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #222;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.8);
+}
+::-webkit-scrollbar-thumb{
+    background: rgba(211,55,30,0.8);    
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(88,88,86,0.8); 
+}
+
+body, html {
+    background: #111;
+    Arial,"MS Sans Serif","Geneva",sans-serif;
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+h1, h2, h3 { font-family: 'Fjalla One', Helvetica, Helvetiva-Neue, sans-serif; }
+h1 { color: inherit; }
+h2 { color: inherit;}
+h3 { color: inherit; text-transform: uppercase;}
+h4, h5, h6 { font-family: 'Andada', Georgia, Times, serif; color: inherit; }
+
+::selection { background: #000; color: #FFF; }
+mark, .mark { background: #F57870; color: #FFF; }
+
+.content {
+}
+
+/** HEADER STYLES   --  --  --  --  --  --  --  --  --  --  */
+
+.header {
+    padding: 20px 0px;
+    background: #EEE;
+    border-bottom: 10px solid #555;
+}
+
+.header .header-image {
+    margin: 22px 0px;
+}
+
+.header .user-panel {
+    float: right !important;
+}
+
+@media (max-width: 768px){ 
+    .header .user-panel {
+	float: none !important;
+    }
+}
+
+    .header .user-panel .user-avatar {
+	float: right;
+	border: 5px solid #D3371E;
+	border-radius: 40px;
+	width: 85px;
+	height: 85px;
+    }
+
+    .header .user-panel .user-info {
+	float: right;
+	padding-right: 30px;
+    }
+
+        .header .user-panel .user-info h3 {
+	    color: #444;
+	    margin: 10px 0px;
+	}
+
+
+/** CONTAINER STYLES:    --  --  --  --  --  --  --  --  --  -- */
+
+.container {
+    margin: 0px auto;
+}
+
+.main {
+    padding-top: 30px;
+}
+
+
+/* Blocks for the column layout */
+
+.block {
+    padding: 20px;
+    background: #EEE;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0 10px 6px -6px #000;
+       -moz-box-shadow: 0 10px 6px -6px #000;
+            box-shadow: 0 10px 6px -6px #000;
+}
+
+.block-red {
+    background: #D3371E;
+    color: #FFF;
+}
+
+.block-black {
+    background: #222;
+    color: #FFF;
+}
+
+.block-green {
+    background: #169C3F;
+    color: #000;
+}
+
+.block-blue {
+    background: #166B83;
+    color: #FFF;
+}
+
+.block-purple {
+    background: #B1195E;
+    color: #FFF;
+}
+
+
+/*
+.block-black h1, .block-black h2, .block-black h4,
+.block-red   h1, .block-red   h2, .block-red h4 { color: #FFF !important; }
+.block-black h3, .block-red h3 { color: #C1BBB6 !important; }
+*/
+/* Only works at the largest scale: */
+@media (min-width: 1230px){
+    .block-4-sq { height: 330px; max-height: 330px; overflow: hidden; }
+    .block-8-sq { height: 730px; max-height: 730px; overflow: hidden; }
+}
+
+
+/** FORMATTING  --  --  --  --  --  --  --  --  --  --  */
+
+/*  FORMATTING  --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   */
+
+/* NB: Some are targeted just at the div.main class */
+/* Most of these are tags, but some are Bootstrap Classes */
+
+blockquote {
+    font-family: 'Andada', Georgia, Times, serif;
+    font-size: 16px;
+    color: #413C37;
+    border-left: 5px solid #E4E4E4;
+}
+
+    blockquote cite {
+	padding: 10px 0px 0px 5px;
+	display: block;
+	font-size: 80%;
+	font-style: italic;
+    }
+
+
+/* ADDED CLASS: Centres Blocks and Text */
+.centre { text-align: center; margin: 0px auto; }
+
+
+code {
+    background: #E9E9E9;
+    font-size: inherit;
+}
+
+
+dl {
+        display: block;
+        padding: 0px 10px 20px 10px;
+        margin-top: 10px;
+        border-top: 3px solid #E4E4E4;
+        color: #808080;
+}
+
+dt {
+        font-size: 110%;
+        padding-top: 20px;
+        padding-bottom: 10px;
+	font-weight: normal;
+	color: #111;
+}
+        dt::after { content: " :~"; }
+
+dd {
+        font-size: 90%;
+        text-indent: 20px;
+}
+
+
+/* ADDED CLASS: Nice calendary date render */
+.event {
+    clear: both;
+    display: block;
+    padding-bottom: 10px;
+}
+
+    .event .event-cal {
+	width: 70px;
+	line-height: 1.1;
+	float: left;
+	background: #DDD;
+	border: 1px solid #CCC;
+	border-radius: 2px;
+	color: #111;
+	margin-right: 10px;
+	text-align: center;
+    }
+    
+    .event h2 {
+	color: #585858;
+	font-size: 16px;
+	font-weight: normal;
+	padding-bottom: 10px;
+	padding-top: 0px;
+	margin: 0;
+    }
+    
+    .event .event-description {
+	margin-left: 80px;
+    }
+
+    .event .event-description p { font-size: 90%; line-height: 110%; }
+    .event .event-date { padding: 5px; }
+    .event .event-date-day { display: block; font-size: 100%; }
+    .event .event-date-num { display: block; font-size: 150%; }
+    .event .event-date-mon { display: block; font-size: 70%; }
+    .event .event-time {
+        padding: 5px;
+        background: #EEE;
+        border-top: 1px solid #CCC;
+    }
+
+/* ADDED CLASS: Renders a div.footnote as references/ sources */
+.footnote {
+    display: block;
+    padding: 10px 10px;
+    margin-top: 20px;
+    border-top: 1px solid #D3371E;
+    color: #808080;
+    font-size: inherit;
+    font-style: italic;
+}
+
+
+hr {
+    padding: 5px 0px;
+    margin: 0;
+    border: 0;
+    border-top: 3px solid #E0E0E0;
+}
+
+
+.main iframe { margin: 10px 0px; width: 100% !important; }
+
+
+.main img { margin: 0px auto; }
+
+
+.mar-5  { margin: 5px;  }
+.mar-10 { margin: 10px; }
+.mar-15 { margin: 15px; }
+.mar-20 { margin: 20px; }
+.mar-30 { margin: 30px; }
+.mar-lr-5  { margin: 0px 5px;  }
+.mar-lr-10 { margin: 0px 10px; }
+.mar-lr-15 { margin: 0px 15px; }
+.mar-lr-20 { margin: 0px 20px; }
+.mar-lr-30 { margin: 0px 30px; }
+
+ol ol {
+    list-style: lower-latin;
+}
+
+ol ol ol {
+    list-style: lower-roman;
+}
+
+
+/* ADDED CLASSES: Adds padding */
+.pad-5  { padding: 5px;  }
+.pad-10 { padding: 10px; }
+.pad-15 { padding: 15px; }
+.pad-20 { padding: 20px; }
+.pad-30 { padding: 30px; }
+.pad-lr-5  { padding: 0px 5px;  }
+.pad-lr-10 { padding: 0px 10px; }
+.pad-lr-15 { padding: 0px 15px; }
+.pad-lr-20 { padding: 0px 20px; }
+.pad-lr-30 { padding: 0px 30px; }
+
+
+pre {
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    line-height: 16px;
+    color: #111;
+    padding: 20px 15px;
+    margin: 10px 0px;
+    background: #E9E9E9;
+    border: 0;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-left: 1px solid #D3371E;
+}
+
+
+table.table {
+    border-top: 3px solid #E0E0E0;
+}
+
+table.table thead {
+    font-size: 120%;
+    font-family: 'Andada', Georgia, Times, serif;
+}
+
+table.table tr {
+    border-bottom: 1px solid #E0E0E0;
+    border-left: 1px dashed #E0E0E0;
+}
+
+table.table td {
+    border-right: 1px dashed #E0E0E0;
+}
