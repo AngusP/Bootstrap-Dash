@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 h1, h2, h3 { font-family: 'Fjalla One', Helvetica, Helvetiva-Neue, sans-serif; }
 h1 { color: inherit; }
 h2 { color: inherit;}
-h3 { color: inherit; text-transform: uppercase;}
+h3 { color: inherit; text-transform: uppercase; margin-top: 10px; }
 h4, h5, h6 { font-family: 'Andada', Georgia, Times, serif; color: inherit; }
 
 ::selection { background: #D3371E; color: #000; }
@@ -51,7 +51,7 @@ mark, .mark { background: #F57870; color: #FFF; }
     padding: 20px 0px;
     background: #EEE;
     border-bottom: 10px solid #555;
-    min-height: 135px;
+    /* min-height: 135px; -- broken in moz */
 }
 
 .header .header-image {
@@ -113,6 +113,17 @@ mark, .mark { background: #F57870; color: #FFF; }
             box-shadow: 0 10px 6px -6px #000;
 }
 
+
+.block-edit {
+    height: 33px;
+    background: #333;
+    color: #FFF;
+    padding: 5px;
+    border-left: 5px solid #000;
+    border-bottom: 1px solid #111;
+}
+
+
 .block-red {
     background: #A82C18;
     color: #FFF;
@@ -122,7 +133,7 @@ mark, .mark { background: #F57870; color: #FFF; }
 .block-black {
     background: #222;
     color: #FFF;
-    border-color: #555;
+    border-color: #333;
 }
 
 .block-green {
@@ -135,6 +146,12 @@ mark, .mark { background: #F57870; color: #FFF; }
     background: #166B83;
     color: #FFF;
     border-color: #0F4A5B;
+}
+
+.block-yellow {
+    background: #F0AD4E;
+    color: #000;
+    border-color: #A77632;
 }
 
 .block-purple {
@@ -150,11 +167,12 @@ mark, .mark { background: #F57870; color: #FFF; }
 .block-black h3, .block-red h3 { color: #C1BBB6 !important; }
 */
 
-/* Square block classes for large: */
+/* Square block classes: */
+/* NB: For medium we allow the block to expand further than square*/
 @media (min-width: 992px){
-    .block-4-sq { height: 202px; max-height: 202px; overflow: hidden; }
-    .block-6-sq { height: 319px; max-height: 319px; overflow: hidden; }
-    .block-8-sq { height: 435px; max-height: 435px; overflow: hidden; }
+    .block-4-sq { min-height: 202px; overflow: hidden; }
+    .block-6-sq { min-height: 319px; overflow: hidden; }
+    .block-8-sq { min-height: 435px; overflow: hidden; }
 }
 @media (min-width: 1230px){
     .block-4-sq { height: 293px; max-height: 293px; overflow: hidden; }
@@ -287,6 +305,11 @@ dd {
     color: #808080;
     font-size: inherit;
     font-style: italic;
+}
+
+
+.glyphicon {
+    font-family: 'Glyphicons Halflings', Helvetica, Arial, sans-serif;
 }
 
 
