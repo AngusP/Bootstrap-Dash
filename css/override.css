@@ -39,7 +39,7 @@ h2 { color: inherit;}
 h3 { color: inherit; text-transform: uppercase;}
 h4, h5, h6 { font-family: 'Andada', Georgia, Times, serif; color: inherit; }
 
-::selection { background: #000; color: #FFF; }
+::selection { background: #D3371E; color: #000; }
 mark, .mark { background: #F57870; color: #FFF; }
 
 .content {
@@ -103,34 +103,40 @@ mark, .mark { background: #F57870; color: #FFF; }
     padding: 20px;
     background: #EEE;
     margin-bottom: 30px;
+    border-left: 5px solid #BBB;
     -webkit-box-shadow: 0 10px 6px -6px #000;
        -moz-box-shadow: 0 10px 6px -6px #000;
             box-shadow: 0 10px 6px -6px #000;
 }
 
 .block-red {
-    background: #D3371E;
+    background: #A82C18;
     color: #FFF;
+    border-color: #7B2012;
 }
 
 .block-black {
     background: #222;
     color: #FFF;
+    border-color: #555;
 }
 
 .block-green {
     background: #169C3F;
     color: #000;
+    border-color: #117C32;
 }
 
 .block-blue {
     background: #166B83;
     color: #FFF;
+    border-color: #0F4A5B;
 }
 
 .block-purple {
     background: #B1195E;
     color: #FFF;
+    border-color: #7B1141;
 }
 
 
@@ -139,16 +145,22 @@ mark, .mark { background: #F57870; color: #FFF; }
 .block-red   h1, .block-red   h2, .block-red h4 { color: #FFF !important; }
 .block-black h3, .block-red h3 { color: #C1BBB6 !important; }
 */
-/* Only works at the largest scale: */
+
+/* Square block classes for large: */
+@media (min-width: 992px){
+    .block-4-sq { height: 202px; max-height: 202px; overflow: hidden; }
+    .block-6-sq { height: 319px; max-height: 319px; overflow: hidden; }
+    .block-8-sq { height: 435px; max-height: 435px; overflow: hidden; }
+}
 @media (min-width: 1230px){
-    .block-4-sq { height: 330px; max-height: 330px; overflow: hidden; }
-    .block-8-sq { height: 730px; max-height: 730px; overflow: hidden; }
+    .block-4-sq { height: 293px; max-height: 293px; overflow: hidden; }
+    .block-6-sq { height: 455px; max-height: 455px; overflow: hidden; } 
+    .block-8-sq { height: 615px; max-height: 615px; overflow: hidden; }
 }
 
 
-/** FORMATTING  --  --  --  --  --  --  --  --  --  --  */
 
-/*  FORMATTING  --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   */
+/**  FORMATTING  --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   */
 
 /* NB: Some are targeted just at the div.main class */
 /* Most of these are tags, but some are Bootstrap Classes */
@@ -168,6 +180,11 @@ blockquote {
     }
 
 
+.btn-full {
+    width: 100%;
+    text-align: left;
+}
+
 /* ADDED CLASS: Centres Blocks and Text */
 .centre { text-align: center; margin: 0px auto; }
 
@@ -177,6 +194,19 @@ code {
     font-size: inherit;
 }
 
+/* Modify grid to allow stacking */
+@media (min-width: 1230px) {
+    .col-lg-12 { clear: both; }
+}
+@media (min-width: 992px) {
+    .col-md-12 { clear: both; }
+}
+@media (min-width: 768px) {
+    .col-sm-12 { clear: both; }
+}
+@media (max-width: 767px) {
+    .col-xs-12 { clear: both; }
+}
 
 dl {
         display: block;
