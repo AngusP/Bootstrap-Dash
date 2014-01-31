@@ -54,18 +54,23 @@
 	  <div class="col-lg-2 col-md-3">
 	    <div class="block">
 	      <div class="form-group">
-		<a href="#" class="btn btn-danger btn-full" type="button">
+		<a href="index.html" class="btn btn-danger btn-full" type="button">
 		  <span class="glyphicon glyphicon-home"> Dash</span>
 		</a>
 	      </div>
 	      <div class="form-group">
-		<a href="#" class="btn btn-default btn-full" type="button">
+		<a href="#" class="btn btn-default btn-full">
+		  <span class="glyphicon glyphicon-pushpin"> Posts</span>
+		</a>
+	      </div>
+	      <div class="form-group">
+		<a href="pages.html" class="btn btn-default btn-full" type="button">
 		  <span class="glyphicon glyphicon-file"> Pages</span>
 		</a>
 	      </div>
 	      <div class="form-group">
 		<a href="#" class="btn btn-default btn-full" type="button">
-		  <span class="glyphicon glyphicon-film"> Media</span>
+		  <span class="glyphicon glyphicon-picture"> Media</span>
 		</a>
 	      </div>
 	      <div class="form-group">
@@ -80,7 +85,7 @@
 	      </div>
 	      <div class="form-group">
 		<a href="#" class="btn btn-default btn-full" type="button">
-		  <span class="glyphicon glyphicon-pushpin"> Widgets</span>
+		  <span class="glyphicon glyphicon-th-large"> Widgets</span>
 		</a>
 	      </div>
 	      <div class="form-group">
@@ -99,8 +104,10 @@
 		<div class="btn-toolbar">
 		  <div class="btn-group">
 		    <span class="btn btn-success">Welcome to your dashboard!</span>
-		    <button type="button" class="btn btn-success">Edit Layout</button>
-		    <button type="button" class="btn btn-success">Add...</button>
+		    <button type="button" class="btn btn-success">
+		      <span class="glyphicon glyphicon-pencil"></span> Edit Layout</button>
+		    <button type="button" class="btn btn-success">
+		      <span class="glyphicon glyphicon-plus"></span> Add Widgets...</button>
 		  </div>
 		</div>
 	      </div>
@@ -109,15 +116,25 @@
 	    <!-- Column 1 -->
 	    <div class="col-md-4">
 	      
-	      <!--div class="block-edit">
-		<button class="btn btn-xs btn-danger pull-right">
-		  <span class="glyphicon glyphicon-remove"> </span>
-		</button>
-	      </div-->
+	      <div class="block-edit">
+		<div class="btn-group pull-right">
+		  <button type="button" class="btn btn-xs btn-default">
+		    <span class="glyphicon glyphicon-cog"> </span>
+		  </button>
+		  <button class="btn btn-xs btn-danger">
+		    <span class="glyphicon glyphicon-remove"> </span>
+		  </button>
+		</div>
+	      </div><!-- .block-edit -->
 	      <div class="block block-red block-4-sq">
 		<h3>Analytics</h3>
 	      </div>
-	    </div>
+
+	      <div class="block block-yellow">
+		<h3>Rescent Activity</h3>
+	      </div>
+	      
+	    </div><!-- .col-md-4 -->
 
 	    <!-- Column 2 -->
 	    <div class="col-md-4">
@@ -143,13 +160,19 @@
 		<h3>Stats</h3>
 		<p>And other stuff that someone did to the site like 40 or 20 minutes ago that you don't really care about...</p>
 	      </div>
-	    </div>
+
+	      <div class="block block-purple">
+		<h3>Events</h3>
+	      </div>
+
+	    </div><!-- .col-md-4 -->
 
 	    <!-- Column 3 -->
 	    <div class="col-md-4">
 	      
 	      <div class="block">
 		<h3>Server Status:</h3>
+		<p>CompSoc Minecraft <span class="label label-danger pull-right">Down</span></p>
 		<p>Has A Calendar <span class="label label-success pull-right">Up</span></p>
 		<p>Tardis  <span class="label label-success pull-right">Up</span></p>
 		<p>Cascaders  <span class="label label-warning pull-right">Unknown</span></p>
