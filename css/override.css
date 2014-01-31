@@ -424,13 +424,15 @@ table.post-list {
     }
 
     table.post-list tr .post-panel {
+	height: 30px;
+    }
+
+    table.post-list tr .post-panel .btn-group {
 	display: none;
     }
 
-    table.post-list tr:hover .post-panel {
+    table.post-list tr:hover .post-panel .btn-group {
 	display: block;
-	margin-top: 5px;
-	clear: both;
     }
 
     table.post-list td.post-check {
