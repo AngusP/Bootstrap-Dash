@@ -12,7 +12,7 @@
     width: 8px;
     max-width: 8px;
     height: 8px;
-    max-width: 8px;
+    max-height: 8px;
 }
 ::-webkit-scrollbar-track {
     background: #222;
@@ -48,9 +48,8 @@ mark, .mark { background: #F57870; color: #FFF; }
 /** HEADER STYLES   --  --  --  --  --  --  --  --  --  --  */
 
 .header {
-    padding: 20px 0px;
-    background: #EEE;
-    border-bottom: 10px solid #555;
+    padding: 20px 30px;
+    background: #F9F9F9;
     /* min-height: 135px; -- broken in moz */
 }
 
@@ -98,20 +97,120 @@ mark, .mark { background: #F57870; color: #FFF; }
 }
 
 .main {
+    padding: 30px;
+}
+
+
+/* Trello-like horizontally scrolling card thing*/
+.cards {
+    background: #DBDBDB;
     padding-top: 30px;
 }
 
+.cards:before, .cards:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+    .card-wrap {
+	margin: auto;  
+	position: relative;
+	width: 100%;
+	padding: 0px 30px;
+	overflow-x: auto;
+    }
+
+    .card-scroll {
+	width: 100000px;
+    }
+
+    .card-col {
+	position: relative;
+	width: 270px;
+	float: left;
+	margin: 0px 4px;
+	overflow-y: auto;
+	overflow-x: hidden;
+    }
+
+    .card-col .block h3 {
+	font-weight: light;
+	color: #111;
+	font-size: 18px;
+    }
+
+    .card-col .block {
+	max-height: 250px;
+	overflow-y: auto;
+    }
+
+    .card-col ::-webkit-scrollbar {
+	width: 6px;
+	max-width: 6px;
+	height: 6px;
+	max-height: 6px;
+    }
+
+    .card-col ::-webkit-scrollbar-track {
+	background: #EEE;
+	-webkit-box-shadow: inset 0 0 6px rgba(200, 200, 200, 0.5);
+    }
+
+    .card-col ::-webkit-scrollbar-thumb {
+	background: #FFF;
+	border-radius: 3px;
+    }
+
+    .trello {
+	position: relative;
+	width: 100px;
+	float: left;
+	margin: 0px 4px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 10px;
+	background: #D0D0D0;
+    }
+
+    .trello a {
+	opacity: 0.6;
+    }
+
+    .trello a:hover {
+	opacity: 1;
+    }
+
+    /* .bits are trello like reminder cards */
+
+    .bit {
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+	background: #FFF;
+	padding: 4px;
+	margin-bottom: 5px;
+	-webkit-box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+	   -moz-box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+	        box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+    }
+
+    a.card-add {
+	display: block;
+	color: #888;
+	padding-top: 5px;
+    }
 
 /* Blocks for the column layout */
 
 .block {
-    padding: 20px;
+    padding: 10px;
     background: #EEE;
     margin-bottom: 30px;
     border-left: 5px solid #BBB;
-    -webkit-box-shadow: 0 10px 6px -6px #000;
+    /*-webkit-box-shadow: 0 10px 6px -6px #000;
        -moz-box-shadow: 0 10px 6px -6px #000;
-            box-shadow: 0 10px 6px -6px #000;
+            box-shadow: 0 10px 6px -6px #000;*/
 }
 
 
