@@ -7,7 +7,28 @@
   </head>
   <body>
     <div class="content">
+
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+	    <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+	    </div>
+	    <div class="modal-body">
+              <div class="bit">
+		...
+	      </div>
+	    </div>
+	    <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+	    </div>
+	  </div>
+	</div>
+      </div><!-- .modal --> 
       
+
       <div class="header">
 	<div class="row container">
 	  <div class="col-sm-6 col-xs-12">
@@ -24,7 +45,9 @@
 		<button class="btn btn-danger">Log Out</button>
 	      </div>
 	    </div>
-	    <div style="clear: both;"> </div>
+	    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+	      Launch demo modal
+	    </button>
 	  </div><!-- .user-panel -->
 	  
 	</div>
@@ -32,18 +55,33 @@
 
 
       <div class="cards">
-	<!--div class="container"-->
+
+	<!-- Minimised Trello Stream -->
+	<div id="trello-minimised" class="hidden">
+	  <div class="container">
+	    <div class="trello trello-min">
+	      <a href="https://trello.com"><img src="img/trello.png"></a>
+	      <a onClick="trelloSwap('trello-maximised', 'trello-minimised');" >
+		<span class="glyphicon glyphicon-plus-sign"> </span> Expand
+	      </a>
+	    </div>
+	  </div>
+	</div>
+	
+	<div id="trello-maximised">
 	  <div class="card-wrap">
-	    <div class="card-scroll">
+	    <div class="card-scroll" id="trello-card-container" style="">
 	      
 	      <div class="trello">
-		<a href="https://trello.com"><img src="img/trello.png"></a>
+		<a href="https://trello.com/b/iqJFVBjF/compsoc-2013-2014" target="_blank"><img src="img/trello.png"></a>
 		<hr />
-		<a href="#"><span class="glyphicon glyphicon-remove-circle"> </span> Collapse</a>
+		<a onClick="trelloSwap('trello-minimised', 'trello-maximised');">
+		  <span class="glyphicon glyphicon-remove-sign"> </span> Collapse
+		</a>
 	      </div>
 	      
 	      <div class="card-col">
-		<div class="block block">
+		<div class="block">
 		  <h3>Skyscanner</h3>
 		  <div class="bit">
 		    Contact: Marie-Sophie.Jammes@skyscanner.net 'Marso'
@@ -57,7 +95,7 @@
 		</div>
 	      </div>
 	      <div class="card-col">
-		<div class="block block">
+		<div class="block">
 		  <h3>Toshiba MVSE</h3>
 		  <div class="bit">
 		    Contact: LWeatherston@tmvse.com 'Leeanne'
@@ -89,7 +127,7 @@
 		</div>
 	      </div>
 	      <div class="card-col">
-		<div class="block block">
+		<div class="block">
 		  <h3>ARM</h3>
 		  <div class="bit">
 		    Contact: Fiona.Smith@arm.com 
@@ -103,7 +141,7 @@
 		</div>
 	      </div>
 	      <div class="card-col">
-		<div class="block block">
+		<div class="block">
 		  <h3>Amazon</h3>
 		  <div class="bit">
 		    Contact: 
@@ -111,39 +149,45 @@
 		</div>
 	      </div>
 	      <div class="card-col">
-		<div class="block block">
+		<div class="block">
 		  <h3>Google</h3>
 		  <div class="bit">
 		    Contact: 
 		  </div>
 		</div>
 	      </div>
-	      <div class="card-col">
-		<div class="block block">
+	      <!--div class="card-col">
+		<div class="block">
 		  <h3>Accenture</h3>
 		</div>
 	      </div>
 	      <div class="card-col">
-		<div class="block block">
+		<div class="block">
 		  <h3>Citi</h3>
 		</div>
 	      </div>
 	      <div class="card-col">
-		<div class="block block">
+		<div class="block">
 		</div>
 	      </div>
 	      <div class="card-col">
-		<div class="block block">
+		<div class="block">
 		</div>
-	      </div>
+	      </div-->
               <div class="card-col">
-		&nbsp;
-              </div>
+		  <div class="block-add">
+		    <a href="#">
+		      <span class="glyphicon glyphicon-plus-sign"></span>
+		      <br />
+		      <span>Add a list...</span>
+		    </a>
+		  </div>
+	      </div>
 
     
 	    </div>
 	  </div>
-	<!--/div--><!-- .container -->
+	</div>
       </div>
 
 
@@ -159,7 +203,7 @@
 
 	<div class="row container">
 	  
-	  <div class="col-xs-12 visible-sm visible-xs">
+	  <div class="col-xs-12 hidden-lg">
 	    <div class="alert alert-danger alert-dismissable">
 	      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	      <strong>Heads up: </strong> Your screen is a little small for this UI...</p>
@@ -183,7 +227,7 @@
 	    </div>
 	    
 	    <!-- Column 1 -->
-	    <div class="col-md-3">
+	    <div class="col-md-3" id="col1">
 	      
 	      <div class="block-edit">
 		<div class="btn-group pull-right">
@@ -201,14 +245,18 @@
 
 
 
-	      <div class="block block-yellow">
-		<h3>Rescent Activity</h3>
+	      <div class="block-add">
+		<a href="#">
+		  <span class="glyphicon glyphicon-map-marker"> </span>
+		  <br>
+		  <span>Rescent Activity</span>
+		</a>
 	      </div>
 	      
 	    </div><!-- .col-md-3 -->
 
 	    <!-- Column 2 -->
-	    <div class="col-md-3">
+	    <div class="col-md-3" id="col2">
 	      
 	      <div class="block block-black block-4-sq">
 		<h3>Rescent Delta</h3>
@@ -239,7 +287,7 @@
 	    </div><!-- .col-md-3 -->
 
 	    <!-- Column 3 -->
-	    <div class="col-md-3">
+	    <div class="col-md-3" id="col3">
 	      
 	      <div class="block">
 		<h3>Server Status:</h3>
@@ -269,14 +317,14 @@
 
 
 	    <!-- Column 4 -->
-	    <div class="col-md-3">
+	    <div class="col-md-3" id="col4">
 	      
 	      <div class="block block-black">
 		<h3>Images 'n Stuff</h3>
 		<img src="http://placehold.it/350x150" class="img-responsive">
 	      </div>
 
-	      <div class="block">
+	      <div class="block block-yellow">
 		<h3>Calendar</h3>
 		<table class="cal">
       <caption>
@@ -363,6 +411,40 @@
       </div><!-- .container -->
     </div><!-- .content -->
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      
+      /*$(function() {
+          $( "#col1" ).sortable();
+          $( "#col1" ).disableSelection();
+          $( "#col2" ).sortable();
+          $( "#col2" ).disableSelection();
+          $( "#col3" ).sortable();
+          $( "#col3" ).disableSelection();
+          $( "#col4" ).sortable();
+          $( "#col4" ).disableSelection();
+      });*/
+
+      function trelloSwap(show, hide) {
+          document.getElementById(show).className = "";
+          document.getElementById(hide).className = "hidden";
+      }
+	   
+      function calculateTrelloWidth() {
+          var w = document.getElementById("trello-card-container");
+          var count = 0; // this will contain the total elements.
+          for (var i = 0; i < w.childNodes.length; i++) {
+	      var node = w.childNodes[i];
+	      if (node.nodeType == Node.ELEMENT_NODE && node.nodeName == "DIV") {
+	          count++;
+	      }
+	  }
+	  var width = "width: " + ((count * 278) - 100) + "px;";
+	  document.getElementById("trello-card-container").setAttribute("style",width);
+      }
+	   
+      document.onload = calculateTrelloWidth();
+    </script>
   </body>
 </html>

@@ -53,6 +53,12 @@ mark, .mark { background: #F57870; color: #FFF; }
     /* min-height: 135px; -- broken in moz */
 }
 
+.header:before, .header:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
 .header .header-image {
     margin: 22px 0px;
     height: 40px;
@@ -137,6 +143,12 @@ mark, .mark { background: #F57870; color: #FFF; }
 	width: 10000px;
     }
 
+    .card-scroll:after {
+	content: " ";
+	clear: both;
+	display: table;
+    }
+
     .card-col {
 	position: relative;
 	width: 270px;
@@ -183,6 +195,23 @@ mark, .mark { background: #F57870; color: #FFF; }
 	padding: 10px;
 	background: #D0D0D0;
 	color: #FFF;
+	font-family: 'Fjalla One', Helvetica, Helvetiva-Neue, sans-serif;
+	font-size: 16px;
+    }
+
+    .trello-min {
+	width: 300px;
+	margin-top: -30px;
+	margin-left: 15px;
+	background: -webkit-linear-gradient(left, #D0D0D0 , rgba(0,0,0,0));
+	background: -o-linear-gradient(right, #D0D0D0, rgba(0,0,0,0));
+	background: -moz-linear-gradient(right, #D0D0D0, rgba(0,0,0,0));
+	background: linear-gradient(to right, #D0D0D0 , rgba(0,0,0,0));
+    }
+
+    .trello-min span {
+	display: inline-block;
+	padding: 0px 10px;
     }
 
     .trello a {
@@ -206,15 +235,27 @@ mark, .mark { background: #F57870; color: #FFF; }
     .bit {
 	-webkit-border-radius: 3px;
 	   -moz-border-radius: 3px;
-	           border-radius: 3px;
-		   background: #FFF;
-		   padding: 4px;
-		   margin-bottom: 5px;
-		   -webkit-box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
-		      -moz-box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
-		              box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+	        border-radius: 3px;
+        background: #FFF;
+	padding: 4px;
+	margin-bottom: 5px;
+	-webkit-box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+	   -moz-box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+	        box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
     }
 
+    .bit-black {
+	color: #FFF;
+	background-color: #222;
+	border-color: #333;
+    }
+
+    .bit-red {
+	color: #FFF;
+	background-color: #A82C18;
+	border-color: #7B2012;
+    }
+    
     a.card-add {
 	display: block;
 	color: #888;
@@ -234,6 +275,7 @@ mark, .mark { background: #F57870; color: #FFF; }
             box-shadow: 0 10px 6px -6px #000;*/
 }
 
+/* Window title bar like editing grab */
 
 .block-edit {
     height: 33px;
@@ -244,6 +286,39 @@ mark, .mark { background: #F57870; color: #FFF; }
     border-bottom: 1px solid #111;
 }
 
+/* Greyed out block to indicate drop location */
+
+.block-add {
+    background: rgba(128, 128, 128, 0.2);
+    border: 3px dashed rgba(128, 128, 128, 0.2);
+    -webkit-box-shadow: inset 0 0 6px rgba(128,128,128,0.1);
+       -moz-box-shadow: inset 0 0 6px rgba(128,128,128,0.1);
+            box-shadow: inset 0 0 6px rgba(128,128,128,0.1);
+    -webkit-border-radius: 0px;
+       -moz-border-radius: 0px;
+            border-radius: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Fjalla One', Helvetica, Helvetiva-Neue, sans-serif;
+    font-size: 20px;
+    opacity: 0.6;
+}
+
+    .block-add:hover {
+	border: 3px dashed rgba(255, 255, 255, 0.5);
+    }
+
+.block-add a {
+    color: rgba(128, 128, 128, 0.8);
+    display: block;
+    padding: 30px;
+}
+
+    .block-add a:hover {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 1);
+    }
+    
 
 .block-red {
     background: #A82C18;
@@ -460,6 +535,52 @@ hr {
 .mar-lr-15 { margin: 0px 15px; }
 .mar-lr-20 { margin: 0px 20px; }
 .mar-lr-30 { margin: 0px 30px; }
+
+
+/* Modal modifications */
+@media screen and (min-width:1400px){
+    .modal-dialog {
+	width: 1400px;
+    }
+}
+
+.modal-content {
+    border: 0;
+    border-left: 5px solid #BBB;
+    border-radius: 0;
+    background: #EEE;
+}
+
+    .modal-content h4 {
+	/*font-family: 'Fjalla One', Helvetica, Helvetiva-Neue, sans-serif;*/
+	font-size: 30px;
+	color: #000;
+    }
+
+    .modal-content .close {
+	color: #000;
+	opacity: 0.3;
+    }
+
+    .modal-content .close:focus,
+    .modal-content .close:hover {
+	opacity: 0.9;
+    }
+
+.modal-header, .modal-footer {
+    border: 0;
+}
+
+/*.modal-body {
+    background: #FFF;
+    margin: 15px;
+    border: 0;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+       -moz-box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+}*/
+
 
 ol ol {
     list-style: lower-latin;
