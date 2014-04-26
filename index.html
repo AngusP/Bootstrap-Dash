@@ -45,9 +45,6 @@
 		<button class="btn btn-danger">Log Out</button>
 	      </div>
 	    </div>
-	    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-	      Launch demo modal
-	    </button>
 	  </div><!-- .user-panel -->
 	  
 	</div>
@@ -101,9 +98,15 @@
 		    Contact: LWeatherston@tmvse.com 'Leeanne'
 		  </div>
 		  <div class="bit">
+		    <div class="bit-label">
+		      <span class="bit-label bit-label-red" title="RED"> RED </span>
+		    </div>
 		    Awaiting Contract
 		  </div>
 		  <div class="bit">
+		    <div class="bit-label">
+		      <span class="bit-label bit-label-purple" title="PURPLE"> PURPLE </span>
+		    </div>
 		    Sent contract, awaiting response
 		  </div>
 		  <div class="bit">
@@ -156,34 +159,38 @@
 		  </div>
 		</div>
 	      </div>
-	      <!--div class="card-col">
-		<div class="block">
-		  <h3>Accenture</h3>
-		</div>
-	      </div>
-	      <div class="card-col">
-		<div class="block">
-		  <h3>Citi</h3>
-		</div>
-	      </div>
-	      <div class="card-col">
-		<div class="block">
-		</div>
-	      </div>
-	      <div class="card-col">
-		<div class="block">
-		</div>
-	      </div-->
               <div class="card-col">
-		  <div class="block-add">
-		    <a href="#">
-		      <span class="glyphicon glyphicon-plus-sign"></span>
-		      <br />
-		      <span>Add a list...</span>
-		    </a>
-		  </div>
+		<div class="block-add">
+		  <a href="#">
+		    <span class="glyphicon glyphicon-plus-sign"></span>
+		    <br>
+		    <span>Add a list...</span>
+		  </a>
+		</div>
 	      </div>
 
+	      <!--div class="card-col">
+		<div class="block-add">
+		  <a href="#">
+		    <!-- Add the .container class to .card-scroll when this is active -->
+		    <!--span class="glyphicon glyphicon-plus-sign"></span>
+		    <br>
+		    <span>Add Card</span>
+		  </a>
+		</div>
+	      </div-->
+
+	      <!--div class="card-col">
+		<div class="block-add">
+		  <a href="#">
+		    <span class="glyphicon glyphicon-random"></span>
+		    <br>
+		    <span>Sync Error</span>
+		    <br>
+		    <small>Click to retry</small>
+		  </a>
+		</div>
+	      </div-->
     
 	    </div>
 	  </div>
@@ -241,6 +248,9 @@
 	      </div><!-- .block-edit -->
 	      <div class="block block-red block-4-sq">
 		<h3>Analytics</h3>
+		 <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+		   Launch Analytics
+		 </button>
 	      </div>
 
 
@@ -413,7 +423,26 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Trello Client JS -->
+    <!--script src="http://code.jquery.com/jquery-1.7.1.min.js"></script-->
+    <script src="https://api.trello.com/1/client.js?key=931fc54cebab68d273559967c49b8b6d"></script>
+
+
     <script type="text/javascript">
+      
+      function calculateTrelloWidth() {
+          var w = document.getElementById("trello-card-container");
+          var count = 0; // this will contain the total elements.
+          for (var i = 0; i < w.childNodes.length; i++) {
+	      var node = w.childNodes[i];
+	      if (node.nodeType == Node.ELEMENT_NODE && node.nodeName == "DIV") {
+	          count++;
+	      }
+	  }
+	  var width = "width: " + ((count * 278) - 100) + "px;";
+	  document.getElementById("trello-card-container").setAttribute("style",width);
+      }
       
       /*$(function() {
           $( "#col1" ).sortable();
@@ -429,19 +458,7 @@
       function trelloSwap(show, hide) {
           document.getElementById(show).className = "";
           document.getElementById(hide).className = "hidden";
-      }
-	   
-      function calculateTrelloWidth() {
-          var w = document.getElementById("trello-card-container");
-          var count = 0; // this will contain the total elements.
-          for (var i = 0; i < w.childNodes.length; i++) {
-	      var node = w.childNodes[i];
-	      if (node.nodeType == Node.ELEMENT_NODE && node.nodeName == "DIV") {
-	          count++;
-	      }
-	  }
-	  var width = "width: " + ((count * 278) - 100) + "px;";
-	  document.getElementById("trello-card-container").setAttribute("style",width);
+          calculateTrelloWidth();
       }
 	   
       document.onload = calculateTrelloWidth();

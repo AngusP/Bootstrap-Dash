@@ -141,6 +141,7 @@ mark, .mark { background: #F57870; color: #FFF; }
 
     .card-scroll {
 	width: 10000px;
+	min-width: 1385px;
     }
 
     .card-scroll:after {
@@ -190,6 +191,7 @@ mark, .mark { background: #F57870; color: #FFF; }
 	width: 100px;
 	float: left;
 	margin: 0px 4px;
+	margin-bottom: 30px;
 	overflow-y: auto;
 	overflow-x: hidden;
 	padding: 10px;
@@ -203,6 +205,7 @@ mark, .mark { background: #F57870; color: #FFF; }
 	width: 300px;
 	margin-top: -30px;
 	margin-left: 15px;
+	margin-bottom: 0px;
 	background: -webkit-linear-gradient(left, #D0D0D0 , rgba(0,0,0,0));
 	background: -o-linear-gradient(right, #D0D0D0, rgba(0,0,0,0));
 	background: -moz-linear-gradient(right, #D0D0D0, rgba(0,0,0,0));
@@ -255,12 +258,35 @@ mark, .mark { background: #F57870; color: #FFF; }
 	background-color: #A82C18;
 	border-color: #7B2012;
     }
-    
-    a.card-add {
-	display: block;
-	color: #888;
-	padding-top: 5px;
+
+div.bit-label {
+    margin: 0px 8px;
+    margin-top: -4px;
+    margin-bottom: 4px;
+}
+
+div.bit-label:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+    span.bit-label {
+	float: left;
+	height: 4px;
+	width: 40px;
+	padding: 0;
+	line-height: 0px;
+	text-indent: 100%;
+	overflow: hidden;
     }
+    /* See end of file for colours */
+    
+a.card-add {
+    display: block;
+    color: #888;
+    padding-top: 5px;
+}
 
 
 /* Blocks for the column layout */
@@ -302,6 +328,7 @@ mark, .mark { background: #F57870; color: #FFF; }
     font-family: 'Fjalla One', Helvetica, Helvetiva-Neue, sans-serif;
     font-size: 20px;
     opacity: 0.6;
+    margin-bottom: 30px;
 }
 
     .block-add:hover {
@@ -340,9 +367,9 @@ mark, .mark { background: #F57870; color: #FFF; }
 }
 
 .block-blue {
-    background: #166B83;
+    background: #23719F;
     color: #FFF;
-    border-color: #0F4A5B;
+    border-color: #1b587d;
 }
 
 .block-yellow {
@@ -399,6 +426,9 @@ blockquote {
 	font-style: italic;
     }
 
+.btn {
+    border-radius: 0;
+}
 
 .btn-full {
     width: 100%;
@@ -538,7 +568,12 @@ hr {
 
 
 /* Modal modifications */
-@media screen and (min-width:1400px){
+@media screen and (min-width: 1400px){
+    .modal-dialog {
+	width: 1400px;
+    }
+}
+@media screen and (min-width: 768px){
     .modal-dialog {
 	width: 1400px;
     }
@@ -552,9 +587,10 @@ hr {
 }
 
     .modal-content h4 {
-	/*font-family: 'Fjalla One', Helvetica, Helvetiva-Neue, sans-serif;*/
-	font-size: 30px;
+	font-family: 'Fjalla One', Helvetica, Helvetiva-Neue, sans-serif;
+	font-size: 25px;
 	color: #000;
+	text-transform: uppercase;
     }
 
     .modal-content .close {
@@ -571,15 +607,9 @@ hr {
     border: 0;
 }
 
-/*.modal-body {
-    background: #FFF;
-    margin: 15px;
-    border: 0;
-    border-radius: 3px;
-    -webkit-box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
-       -moz-box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
-            box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
-}*/
+.modal-body {
+    background: #F8F8F8;
+}
 
 
 ol ol {
@@ -748,3 +778,12 @@ table.table td {
     border-right: 1px dashed #BBB;
 }
 
+
+/* .bit-label-COLOUR */
+
+.bit-label-green  { background-color: #34B27D; }
+.bit-label-yellow { background-color: #DBDB57; } 
+.bit-label-orange { background-color: #E09952; }
+.bit-label-red    { background-color: #CB4D4D; }
+.bit-label-purple { background-color: #9933CC; }
+.bit-label-blue   { background-color: #4D77CB; }
